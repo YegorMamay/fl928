@@ -1,0 +1,288 @@
+.logo {
+  &,
+  &-link,
+  &-img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.phone {
+  @extend %reset-list;
+
+  &,
+  &-item {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &-item {
+    margin: 0 5px;
+  }
+
+  &-number {
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+//Other
+.phone-number[href^="tel:+"]::before,
+.phone-dropdown__link[href^="tel:+"]::before,
+.phone-number[href^="tel:0"]::before,
+.phone-dropdown__link[href^="tel:0"]::before,
+.phone-number[href^="tel:38"]::before,
+.phone-dropdown__link[href^="tel:38"]::before,
+.phone-dropdown__link[href^="tel:+38"]::before,
+.phone-number[href^="tel:+38"]::before {
+  content: '';
+  display: inline-block;
+  vertical-align: baseline;
+  width: 15px;
+  height: 15px;
+  margin-right: 3px;
+  margin-bottom: -1px;
+  background-image: image-url('phones.svg');
+  background-repeat: no-repeat;
+}
+
+//Lifecell
+.phone-number[href^="tel:+38063"]::before,
+.phone-dropdown__link[href^="tel:+38063"]::before,
+.phone-number[href^="tel:+38073"]::before,
+.phone-dropdown__link[href^="tel:+38073"]::before,
+.phone-dropdown__link[href^="tel:+38093"]::before,
+.phone-number[href^="tel:+38093"]::before {
+  content: '';
+  display: inline-block;
+  vertical-align: baseline;
+  width: 15px;
+  height: 15px;
+  margin-right: 3px;
+  margin-bottom: -1px;
+  background-image: image-url('life.svg');
+  background-repeat: no-repeat;
+}
+
+//Vodafone
+.phone-number[href^="tel:+38050"]::before,
+.phone-dropdown__link[href^="tel:+38050"]::before,
+.phone-number[href^="tel:+38066"]::before,
+.phone-dropdown__link[href^="tel:+38066"]::before,
+.phone-number[href^="tel:+38095"]::before,
+.phone-dropdown__link[href^="tel:+38095"]::before,
+.phone-number[href^="tel:+38099"]::before,
+.phone-dropdown__link[href^="tel:+38099"]::before {
+  content: '';
+  display: inline-block;
+  vertical-align: baseline;
+  width: 15px;
+  height: 15px;
+  margin-right: 3px;
+  margin-bottom: -1px;
+  background-image: image-url('vodafone.svg');
+  background-repeat: no-repeat;
+}
+
+//kyivstar
+.phone-number[href^="tel:+38067"]::before,
+.phone-dropdown__link[href^="tel:+38067"]::before,
+.phone-number[href^="tel:+38068"]::before,
+.phone-dropdown__link[href^="tel:+38068"]::before,
+.phone-number[href^="tel:+38096"]::before,
+.phone-dropdown__link[href^="tel:+38096"]::before,
+.phone-number[href^="tel:+38097"]::before,
+.phone-dropdown__link[href^="tel:+38097"]::before,
+.phone-number[href^="tel:+38098"]::before,
+.phone-dropdown__link[href^="tel:+38098"]::before {
+  content: '';
+  display: inline-block;
+  vertical-align: baseline;
+  width: 15px;
+  height: 15px;
+  margin-right: 3px;
+  margin-bottom: -1px;
+  background-image: image-url('kyivstar.svg');
+  background-repeat: no-repeat;
+}
+
+.phone-dropdown {
+  @extend %reset-list;
+  display: inline-flex;
+  align-items: center;
+  min-width: 205px;
+  position: relative;
+  margin-right: 10px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__button {
+    background: transparent;
+    border: none;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    &.active {
+      &:after {
+        transform: rotate(-225deg);
+        transition: .2s;
+      }
+    }
+
+    &:after {
+      content: "";
+      display: inline-block;
+      margin-bottom: 3px;
+      margin-left: 10px;
+      width: 7px;
+      height: 7px;
+      border-bottom: 2px solid $themeColorTwo;
+      border-left: 2px solid $themeColorTwo;
+      transform: rotate(-45deg);
+      transition: .2s;
+    }
+  }
+
+  &__list {
+    @extend %reset-list;
+    background: $primary_color_two;
+    box-shadow: $shadow;
+    position: absolute;
+    padding: 15px 10px;
+    width: 85%;
+    height: auto;
+    left: -12px;
+    top: 100%;
+    z-index: 33;
+    display: none;
+
+    & .phone-dropdown {
+
+      &__item {
+        margin-bottom: 8px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &__link {
+        color: $primary_color_one;
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.social {
+  @extend %reset-list;
+
+  &,
+  &-item {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &-item {
+    margin: 0 10px;
+  }
+
+  &-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    color: $iconColor;
+
+    &:hover, &:active, &:focus {
+      color: $iconColorActive;
+    }
+  }
+}
+
+.messenger {
+  @extend %reset-list;
+
+  &,
+  &-item {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &-item {
+    margin: 0 5px;
+  }
+
+  &-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    color: $iconColor;
+
+    &:hover, &:active, &:focus {
+      color: $iconColorActive;
+    }
+  }
+}
+
+.lang {
+  @extend %reset-list;
+
+  &,
+  &-item {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &-item {
+    margin: 0 5px;
+
+    a {
+      display: block;
+
+
+      &:after {
+        //content: "/";
+        //margin-left: 15px;
+      }
+
+      img {
+        height: 15px;
+      }
+    }
+  }
+
+  &-item:last-child {
+    a {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+//lang dropdown
+.pll-parent-menu-item {
+  .sub-menu {
+    width: auto !important;
+
+    .lang-item {
+      display: block;
+      text-align: center;
+    }
+  }
+}

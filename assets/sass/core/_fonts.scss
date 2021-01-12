@@ -1,0 +1,24 @@
+//* example 1 (local import) see on font src and set match property!
+
+//@font-face {
+//    font-family: 'UniSansBook';
+//    src: url("assets/fonts/UniSansBookRegular.ttf");
+//    font-weight: 400;
+//    font-style: normal;
+//    font-display: swap;
+//}
+
+//@font-face {
+//    font-family: 'UniSansBook';
+//    src: url("assets/fonts/UniSansBookBoldItalic.ttf");
+//    font-weight: 700;
+//    font-style: italic;
+//    font-display: swap;
+//}
+
+//* example 2 (import from google fonts)
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+$font-family-sans-serif: 'Open Sans', sans-serif;
+
+$fontFamilyOne: $font-family-sans-serif; // titles
+$fontFamilyTwo: $font-family-sans-serif; // body

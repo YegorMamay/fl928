@@ -1,0 +1,35 @@
+.catalog-shortcode-item, .catalog-item {
+    box-shadow: $shadow;
+    border: 1px solid $borderColor;
+    @include smooth_animation;
+    
+    &:hover {
+        box-shadow: none;
+    }
+    
+    h6 {
+        padding: 15px;
+
+        & a {
+            font-size: inherit;
+            line-height: inherit;
+        }
+    }
+}
+
+// Шорткод вывода списка категорий
+.list-cat {
+    &__item a {
+        box-shadow: $shadow;
+        border: 1px solid $borderColor;
+        @include smooth_animation;
+        
+        &:hover {
+            box-shadow: none;
+        }
+        
+        .list-cat__title {
+            padding: 15px;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "name": "fk-template",
+    "version": "1.0.0",
+    "description": "Workpieces code and structure that I use in every project",
+    "main": "gulpfile.babel.js",
+    "devDependencies": {
+        "@babel/core": "^7.12.3",
+        "@babel/preset-env": "^7.12.1",
+        "@babel/register": "^7.12.1",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.12.1",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-babel": "^8.0.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-svgmin": "^3.0.0",
+        "gulp-svgstore": "^7.0.1",
+        "gulp-uglify": "^3.0.2",
+        "husky": "^4.3.0"
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-env"
+        ]
+    },
+    "browserslist": [
+        "last 2 versions"
+    ],
+    "scripts": {
+        "start": "yarn install --modules-folder ./../node_modules",
+        "sass": "node ./node_modules/gulp/bin/gulp.js sass",
+        "babel": "node ./node_modules/gulp/bin/gulp.js babel",
+        "lint": "./node_modules/.bin/eslint assets/js/es6/**/*.js"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kudinovfedor/fk-template.git"
+    },
+    "keywords": [
+        "HTML5",
+        "CSS3",
+        "Sass(Scss)",
+        "SMACSS",
+        "Node",
+        "npm",
+        "yarn",
+        "Gulp"
+    ],
+    "author": "Kudinov Fedor",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/kudinovfedor/fk-template/issues"
+    },
+    "homepage": "https://github.com/kudinovfedor/fk-template#readme"
+}

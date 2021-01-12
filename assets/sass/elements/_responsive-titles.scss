@@ -1,0 +1,130 @@
+$viewport-map: (
+    viewport-min: 480px,
+    viewport-max: 1280px
+);
+
+$basic-font-size: 16px;
+//info in _typography.scss
+$title-line-height: 1.48 !default;
+
+$headers-map: (
+    'h1.hero-title': (
+            fons-size-min: 32px,
+            font-size-max: $basic-font-size * 3.5,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 43px,
+    ),
+    '.single-title': (
+            fons-size-min: 27px,
+            font-size-max: $basic-font-size * 2.6,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 36px
+    ),
+    h1: (
+            fons-size-min: 30px,
+            font-size-max: $basic-font-size * 3,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 38px
+    ),
+    '.h1': (
+            fons-size-min: 30px,
+            font-size-max: $basic-font-size * 3,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 38px
+    ),
+    h2: (
+            fons-size-min: 27px,
+            font-size-max: $basic-font-size * 2.6,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 36px
+    ),
+    '.h2': (
+            fons-size-min: 27px,
+            font-size-max: $basic-font-size * 2.6,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 36px
+    ),
+    h3: (
+            fons-size-min: 23px,
+            font-size-max: $basic-font-size * 2,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 34px
+    ),
+    '.h3': (
+            fons-size-min: 23px,
+            font-size-max: $basic-font-size * 2,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 34px
+    ),
+    h4: (
+            fons-size-min: 21px,
+            font-size-max: $basic-font-size * 1.8,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 32px
+    ),
+    '.h4': (
+            fons-size-min: 21px,
+            font-size-max: $basic-font-size * 1.8,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 32px
+    ),
+    h5: (
+            fons-size-min: 18px,
+            font-size-max: $basic-font-size * 1.6,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 30px
+    ),
+    '.h5': (
+            fons-size-min: 18px,
+            font-size-max: $basic-font-size * 1.6,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 30px
+    ),
+    h6: (
+            fons-size-min: 16px,
+            font-size-max: $basic-font-size * 1.4,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 28px
+    ),
+    '.h6': (
+            fons-size-min: 16px,
+            font-size-max: $basic-font-size * 1.4,
+            line-height: $basic-font-size * $title-line-height,
+            font-size-fallback: 28px
+    )
+);
+
+@mixin responsive-headers() {
+    @each $name, $value in $headers-map {
+        #{$name} {
+            font-size: round(map_get($value, fons-size-min));
+            line-height: floor(round(map_get($value, fons-size-min)) * $title-line-height);
+            font-weight: 700;
+        }
+    }
+
+    @media (min-width: map_get($viewport-map, viewport-min)) and (max-width: map_get($viewport-map, viewport-max) - 1) {
+
+        @each $name, $value in $headers-map {
+            #{$name} {
+                font-size: map_get($value, font-size-fallback);
+                font-size: calc-responsive-font-size(map_get($value, fons-size-min), map_get($value, font-size-max), map_get($viewport-map, viewport-min), map_get($viewport-map, viewport-max));
+                line-height: floor(round(map_get($value, font-size-fallback)) * $title-line-height);
+            }
+        }
+
+    }
+
+    @media (min-width: map_get($viewport-map, viewport-max)) {
+        @each $name, $value in $headers-map {
+            #{$name} {
+                font-size: round(map_get($value, font-size-max));
+                line-height: floor(round(map_get($value, font-size-max)) * $title-line-height);
+            }
+        }
+    }
+}
+
+@if (mixin_exists('responsive-headers')) {
+    @include responsive-headers();
+}

@@ -1,0 +1,49 @@
+// <div class="vh-xs-2 vh-sm-2 vh-md-2 vh-lg-2 vh-xl-2"></div>
+
+$space-qty: 10;
+$space-multiplier: 1;
+
+$space-map: (
+    extra-small: xs,
+    small: sm,
+    medium: md,
+    large: lg,
+    extra-large: xl
+);
+
+$space-media-map: (
+    small: 545,
+    medium: 769,
+    large: 1025,
+    extra-large: 1367
+);
+
+@each $name, $value in $space-map {
+    @if $name == extra-small {
+        @for $i from 0 through $space-qty {
+            .vh-#{$value}-#{$i} {
+                @if ($i == 0) {
+                    height: 0;
+                } @else {
+                    height: #{$i * $space-multiplier}vh;
+                }
+            }
+        }
+
+    } @else {
+
+        @media only screen and (min-width: #{map-get($space-media-map, $name)}px) {
+
+            @for $i from 0 through $space-qty {
+
+                .vh-#{$value}-#{$i} {
+                    @if ($i == 0) {
+                        height: 0;
+                    } @else {
+                        height: #{$i * $space-multiplier}vh;
+                    }
+                }
+            }
+        }
+    }
+}

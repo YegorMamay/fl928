@@ -1,0 +1,133 @@
+// Calculate font metrics.
+// example from Google Fonts, font-family: Open Sans;
+// use https://grtcalculator.com/
+// font-size 14px line-height: 24px our font metrics 1.714 set value to variable ($font-metrics-size)
+//
+$font-metrics-size: 1.6 !default;
+$font-min-size: 14px !default;
+$font-weight-size: 400 !default;
+$elements-space: false !default;
+$space-value: 10px;
+$tablet-font-size: $font-min-size + 1;
+$laptop-font-size: $font-min-size + 2;
+$desktop-font-size: $font-min-size + 3;
+$font-line-height: $font-min-size * $font-metrics-size;
+
+$media-queries: (
+        mobile (
+                "(min-width: 300px)"
+        ),
+        tablet (
+                "(min-width: 768px)"
+        ),
+        laptop (
+                "(min-width: 1024px)"
+        ),
+        desktop (
+                "(min-width: 1200px)"
+        )
+);
+
+$elements-list: (
+        body, html, a,
+        p, em,
+        small, strong, sub,
+        sup, blockquote, cite,
+        pre, ol, ul,
+        li, div, article
+);
+
+@mixin media-font-style($font-size, $font-metric) {
+  color: inherit;
+  text-decoration: none;
+  font-size: $font-size;
+  line-height: floor($font-size * $font-metric);
+}
+
+@mixin elements-space($type: margin, $direction: all, $value: null) {
+  @if $type == padding {
+    @if $direction == all {
+      padding: $value
+    } @else if $direction == top {
+      padding-top: $value
+    } @else if $direction == left {
+      padding-left: $value
+    } @else if $direction == right {
+      padding-right: $value
+    } @else {
+      padding-bottom: $value
+    }
+  } @else {
+    @if $direction == all {
+      margin: $value;
+    } @else if $direction == top {
+      margin-top: $value
+    } @else if $direction == left {
+      margin-left: $value
+    } @else if $direction == right {
+      margin-right: $value
+    } @else {
+      margin-bottom: $value
+    }
+  }
+}
+
+@mixin media-font-queries() {
+
+  @each $key, $breakpoints in $media-queries {
+
+    @media #{$breakpoints} {
+
+      @if ($key == mobile) {
+        @if ($elements-space) {
+          h1 {
+            @include elements-space(margin, bottom, $space-value + 5);
+          }
+          h2 {
+            @include elements-space(margin, bottom, $space-value + 2);
+          }
+          h3 {
+            @include elements-space(margin, bottom, $space-value + 2);
+          }
+          h4, h5, h6, p {
+            @include elements-space(margin, bottom, $space-value);
+          }
+        }
+        #{$elements-list} {
+          @include media-font-style($font-min-size, $font-metrics-size);
+        }
+      } @else if ($key == tablet) {
+        #{$elements-list} {
+          @include media-font-style($tablet-font-size, $font-metrics-size);
+        }
+      } @else if ($key == laptop) {
+        #{$elements-list} {
+          @include media-font-style($laptop-font-size, $font-metrics-size);
+        }
+      } @else if ($key == desktop) {
+        @if ($elements-space) {
+          h1 {
+            @include elements-space(margin, bottom, $space-value + 8);
+          }
+          h2 {
+            @include elements-space(margin, bottom, $space-value + 6);
+          }
+          h3 {
+            @include elements-space(margin, bottom, $space-value + 5);
+          }
+          h4, h5, h6, p {
+            @include elements-space(margin, bottom, $space-value + 4);
+          }
+        }
+        #{$elements-list} {
+          @include media-font-style($desktop-font-size, $font-metrics-size);
+        }
+      }
+    }
+
+  }
+}
+
+@if (mixin_exists('media-font-queries')) {
+  @include media-font-queries();
+}

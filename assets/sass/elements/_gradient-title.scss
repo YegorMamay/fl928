@@ -1,0 +1,35 @@
+// Detect IE 10+ fix for gradient-text
+@mixin ie-only() {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin title-gradient($direction) {
+  display: table;
+  background-image: linear-gradient(to bottom, $themeColorTwo 10%, $themeColorOne 75%, $themeColorOne 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include ie-only() {
+    background-image: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    color: $themeColorOne;
+  }
+
+  @if $direction == center {
+    margin-left: auto;
+    margin-right: auto;
+  } @else if $direction == right {
+    width: 100%;
+    text-align: right;
+  } @else {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.text-gradient {
+  @include title-gradient(left);
+}
