@@ -1,24 +1,23 @@
 //* example 1 (local import) see on font src and set match property!
 
-//@font-face {
-//    font-family: 'UniSansBook';
-//    src: url("assets/fonts/UniSansBookRegular.ttf");
-//    font-weight: 400;
-//    font-style: normal;
-//    font-display: swap;
-//}
+@font-face {
+    font-family: 'ShangoMedium';
+    src: url("assets/fonts/ShangoMedium.otf");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
 
-//@font-face {
-//    font-family: 'UniSansBook';
-//    src: url("assets/fonts/UniSansBookBoldItalic.ttf");
-//    font-weight: 700;
-//    font-style: italic;
-//    font-display: swap;
-//}
+@font-face {
+    font-family: 'ShangoRegular';
+    src: url("assets/fonts/ShangoRegular.otf");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
 
 //* example 2 (import from google fonts)
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-$font-family-sans-serif: 'Open Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&display=swap');
 
-$fontFamilyOne: $font-family-sans-serif; // titles
-$fontFamilyTwo: $font-family-sans-serif; // body
+$fontFamilyOne: 'ShangoRegular'; // titles
+$fontFamilyTwo: 'Manrope', sans-serif; // body

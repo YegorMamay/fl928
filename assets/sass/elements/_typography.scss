@@ -131,3 +131,7 @@ $elements-list: (
 @if (mixin_exists('media-font-queries')) {
   @include media-font-queries();
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $fontFamilyOne;
+}

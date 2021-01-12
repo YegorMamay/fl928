@@ -27,13 +27,13 @@ $primary_color_two: #fff !default; //white
 
 
 // THEME COLORS
-$themeColorOne: #2c3e50; // Обычно самый темный цвет. Используется для: заголовков h1-h6 - $titleFontColor и других. 
-$themeColorTwo: #e74c3c; // Основной/акцентный цвет бренда. Поменять значение этой переменной согласно макета обязательно!
+$themeColorOne: #0F0F0F; // Обычно самый темный цвет. Используется для: заголовков h1-h6 - $titleFontColor и других. 
+$themeColorTwo: #0F0F0F; // Основной/акцентный цвет бренда. Поменять значение этой переменной согласно макета обязательно!
 
 
 $borderRadius: 0;
 $borderColor: lighten($primary_color_one, 80%);
-$shadow: 0 10px 20px rgba($primary_color_one, .2);
+$shadow: 0 2px 2px rgba($primary_color_one, .2);
 
 // SELECTION: цвет фона и текста при выделении его курсором
 $selectionBgColor: $themeColorTwo;
@@ -51,26 +51,26 @@ $bodyFontColor: $primary_color_one;
 $wrapperBgColor: $primary_color_two;
 
 // HEADER: цвет фона шапки сайта
-$headerBgColor: $themeColorOne;
-$headerFontColor: $primary_color_two;
+$headerBgColor: $primary_color_two;
+$headerFontColor: $primary_color_one;
 $headerHight: 80px;
 
 // MENU
-$menuBgColor: $themeColorOne;
+$menuBgColor: $primary_color_two;
 $menuBgColorActive: $themeColorTwo;
-$menuFontColor: $primary_color_two;
+$menuFontColor: $primary_color_one;
 $menuFontColorActive: $primary_color_two;
 
 // MENU mobile/Sub
-$navHeaderMobileBGColor: $themeColorOne;
-$navHamburgerMobileColor: $primary_color_two;
-$menuMobileBGColor: $themeColorOne;
+$navHeaderMobileBGColor: $primary_color_two;
+$navHamburgerMobileColor: $primary_color_one;
+$menuMobileBGColor: $primary_color_two;
 $menuMobileSubMenuBGColor: lighten($themeColorOne, 10%);
-$menuMobileTextColor: $primary_color_two;
+$menuMobileTextColor: $primary_color_one;
 $menuMobileSubMenuTextColor: $menuMobileTextColor;
 $menuMobileSubMenuBGOnHover: darken($themeColorTwo, 10%);
 $menuMobileSubMenuTextColorOnHover: $primary_color_two;
-$navArrowColor: $primary_color_two;
+$navArrowColor: $primary_color_one;
 
 $menuMobileLinkFontSize: 20px;
 $menuMobileSubMenuLinkFontSize: 18px;
@@ -103,7 +103,7 @@ $tableEvenBgColor: $themeColorTwo;
 $tableEvenFontColor: $primary_color_two;
 
 // TEXT
-$textMutedColor: lighten($primary_color_one, 75%);;
+$textMutedColor: lighten($primary_color_one, 65%);;
 
 // Icons
 $iconColor: $themeColorTwo;
@@ -121,7 +121,7 @@ $formFieldBackgroundColor: $primary_color_two;
 $formBgColor: lighten($themeColorOne, 75%);
 
 // FOOTER
-$footerBgColor: $themeColorOne;
+$footerBgColor: $primary_color_one;
 $footerFontColor: $primary_color_two;
 $footerLinkColorActive: darken($footerFontColor, 5%);
 

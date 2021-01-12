@@ -3,6 +3,16 @@
     background-color: $headerBgColor;
     color: $headerFontColor;
     box-shadow: $shadow;
+    //border-bottom: 1px solid $textMutedColor;
+    
+    .left-top, .right-top {
+        border-bottom: 1px solid $textMutedColor;
+        padding-bottom: 20px;
+    }
+    
+    .fa-user {
+        font-size: 30px;
+    }
 
     &.is-sticky {
 

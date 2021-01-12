@@ -97,77 +97,13 @@
     <header class="header <?php sticky_header(); ?>">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
-                    <div class="logo">
-                        <?php get_default_logo_link([
-                            'name' => 'logo.svg',
-                            'options' => [
-                                'class' => 'logo-img',
-                                'width' => 100,
-                                'height' => 50,
-                            ],
-                        ])
-                        ?>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                    <div class="left-top d-flex justify-content-between">
+                        <?php echo do_shortcode('[bw-phone]'); ?>
+                        <?php echo do_shortcode('[bw-social]'); ?>
                     </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                    <div class="nav-wrapper">
-                        <?php if (has_nav_menu('language-switcher')) { ?>
-                            <nav class="nav js-menu">
-                                <button type="button" tabindex="0"
-                                        class="menu-item-close menu-close js-menu-close"></button>
-                                <?php wp_nav_menu(array(
-                                    'theme_location' => 'language-switcher',
-                                    'container' => false,
-                                    'menu_class' => 'menu-container',
-                                    'menu_id' => '',
-                                    'fallback_cb' => 'wp_page_menu',
-                                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                                    'depth' => 3
-                                )); ?>
-                            </nav>
-                        <?php } ?>
-                        <div class="woo-cart woo-cart-popup-wrapper">
-                            <?php if ( class_exists( 'WooCommerce' ) ) { ?>
-                                <?php echo woocommerce_cart(); ?>
-                                <?php echo woocommerce_cart_popup(); ?>
-                                <span id="modal-cart" class="cart-caption">
-                                    <?php echo woocommerce_get_total_price(); ?>
-                                </span>
-                            <?php } ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-<!-- Dropdown phones -->
-<?php if (has_phones()) { ?>
-    <ul class="phone-dropdown">
-        <li class="phone-dropdown__item">
-            <?php foreach(get_phones() as $key => $phone) { ?>
-            <?php if ($key === key(get_phones())) { ?>
-            <a href="tel:<?php echo esc_attr(get_phone_number($phone)); ?>" class="phone-dropdown__link phone-dropdown--main">
-                <?php echo esc_html($phone); ?>
-            </a>
-            <button type="button" class="phone-dropdown__button js-dropdown"></button>
-            <ul class="phone-dropdown__list js-phone-list">
-                <?php  } else { ?>
-                    <li class="phone-dropdown__item">
-                        <a href="tel:<?php echo esc_attr(get_phone_number($phone)); ?>" class="phone-dropdown__link">
-                            <?php echo esc_html($phone); ?>
-                        </a>
-                    </li>
-                <?php } ?>
-                <?php } ?>
-            </ul>
-        </li>
-    </ul>
-<?php } ?>
-<!-- Dropdown phones -->
-                </div>
-            </div>
-
-            <?php if (has_nav_menu('main-nav')) { ?>
+                   
+                   <?php if (has_nav_menu('main-nav')) { ?>
                 <nav class="nav js-menu">
                     <button type="button" tabindex="0"
                             class="menu-item-close menu-close js-menu-close"></button>
@@ -182,13 +118,82 @@
                     )); ?>
                 </nav>
             <?php } ?>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+                    <div class="logo">
+                        <?php get_default_logo_link([
+                            'name' => 'logo.svg',
+                            'options' => [
+                                'class' => 'logo-img',
+                                'width' => 150,
+                                'height' => 150,
+                            ],
+                        ])
+                        ?>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                    <div class="right-top d-flex justify-content-between">
+                   <?php
+                    $address = get_theme_mod('bw_additional_address');
+                    if (!empty($address)) { ?>
+                    <span class="text-muted">
+                        <?php echo esc_html($address); ?>
+                    </span>
+                    <?php } ?>
+                    
+                    <a href="/my-account/"><i class="fal fa-user"></i></a>
+                   
+                    <div class="nav-wrapper">
+                        <div class="woo-cart woo-cart-popup-wrapper">
+                            <?php if ( class_exists( 'WooCommerce' ) ) { ?>
+                                <?php echo woocommerce_cart(); ?>
+                                <?php echo woocommerce_cart_popup(); ?>
+                                <span id="modal-cart" class="cart-caption">
+                                    <?php echo woocommerce_get_total_price(); ?>
+                                </span>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    </div>
+                <nav class="nav js-menu">
+                    <?php wp_nav_menu(array(
+                        'theme_location' => 'second-menu',
+                        'container' => false,
+                        'menu_class' => 'menu-container',
+                        'menu_id' => '',
+                        'fallback_cb' => 'wp_page_menu',
+                        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'depth' => 2
+                    )); ?>
+                </nav>
+                </div>
+            </div>
+
+            
         </div>
     </header>
 
     <!-- Mobile menu start-->
     <div class="nav-mobile-header">
-        <div class="social-mob"><?php echo do_shortcode('[bw-social]'); ?></div>
-        <div class="logo"><?php get_default_logo_link(); ?></div>
+        <div class="logo">
+            <?php get_default_logo_link([
+                'name' => 'fl928-logo-sign.svg',
+                'options' => [
+                    'class' => 'logo-img',
+                    'width' => 30,
+                    'height' => 30,
+                ],
+            ])
+            ?>
+        </div>
+        
+        <div class="woo-cart">
+           <?php if ( class_exists( 'WooCommerce' ) ) woocommerce_cart() ?><?php echo woocommerce_get_total_price(); ?>
+        </div>
+        
+        
+        
         <button class="hamburger js-hamburger" type="button" tabindex="0">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -223,6 +228,9 @@
             <div class="mobile-phones">
                 <?php echo do_shortcode('[bw-phone]'); ?>
             </div>
+            <div class="vh-xs-2"></div>
+            <div class="social-mob"><?php echo do_shortcode('[bw-social]'); ?></div>
+            
         </nav>
     <?php } ?>
     <!-- Mobile menu end-->
