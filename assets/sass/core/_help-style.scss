@@ -21,7 +21,7 @@ em {
     &-muted {
         color: $textMutedColor !important;
     }
-    
+
     &-white {
         color: #fff;
     }
@@ -49,7 +49,7 @@ em {
     &-underline {
         text-decoration: underline;
     }
-    
+
     &-through {
         text-decoration: line-through;
     }
@@ -61,11 +61,11 @@ em {
     &-bold {
         font-weight: bold;
     }
-    
+
     &-italic {
         font-style: italic;
     }
-    
+
     &-vertical {
         transform: rotate(-90deg);
     }
@@ -114,7 +114,7 @@ em {
 
 .shadow {
     box-shadow: $shadow;
-    
+
     &-bottom {
         box-shadow: 0 8px 6px -6px $themeColorOne;
     }
@@ -153,16 +153,16 @@ em {
 }
 
 .hide-on-mobile {
-    display: block !important; 
-    
-    @media #{$desktop-max} {
+    display: block !important;
+
+    @media #{$mobile-max} {
         display: none !important;
     }
 }
 
 .hide-on-desktop {
     display: none !important;
-    
+
     @media #{$desktop-max} {
         display: block !important;
     }
@@ -171,5 +171,5 @@ em {
 .center-on-mobile {
     @media #{$desktop-max} {
             text-align: center !important;
-    } 
+    }
 }

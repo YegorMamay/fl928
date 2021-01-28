@@ -4,6 +4,13 @@
     bottom: 0;
     left: 0;
     background-color: $footerBgColor;
+	ul {
+		padding-left: 0;
+		list-style: none;
+	}
+	.social-link {
+		color: #fff;
+	}
 }
 
 .pre-footer {
@@ -25,11 +32,31 @@
         &:hover {
             color: $footerLinkColorActive;
         }
+		&.copyright-link-page {
+			text-decoration: none;
+		}
     }
-    
-    //xs 544
-    @media #{$mobile-max} {
-        flex-direction: column;
-        text-align: center;
-    }
+
+
+
+
+}
+
+@media #{$tablet-max} {
+	.copyright {
+		flex-direction: column;
+		text-align: center;
+		.date {
+			order: 5;
+		}
+		.developer {
+			order: 10;
+		}
+	}
+}
+
+@media #{$mobile-max} {
+	.footer {
+		text-align: center;
+	}
 }

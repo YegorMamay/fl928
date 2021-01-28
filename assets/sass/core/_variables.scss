@@ -27,7 +27,7 @@ $primary_color_two: #fff !default; //white
 
 
 // THEME COLORS
-$themeColorOne: #0F0F0F; // Обычно самый темный цвет. Используется для: заголовков h1-h6 - $titleFontColor и других. 
+$themeColorOne: #0F0F0F; // Обычно самый темный цвет. Используется для: заголовков h1-h6 - $titleFontColor и других.
 $themeColorTwo: #0F0F0F; // Основной/акцентный цвет бренда. Поменять значение этой переменной согласно макета обязательно!
 
 
@@ -67,7 +67,7 @@ $navHamburgerMobileColor: $primary_color_one;
 $menuMobileBGColor: $primary_color_two;
 $menuMobileSubMenuBGColor: lighten($themeColorOne, 10%);
 $menuMobileTextColor: $primary_color_one;
-$menuMobileSubMenuTextColor: $menuMobileTextColor;
+$menuMobileSubMenuTextColor: $primary_color_two;
 $menuMobileSubMenuBGOnHover: darken($themeColorTwo, 10%);
 $menuMobileSubMenuTextColorOnHover: $primary_color_two;
 $navArrowColor: $primary_color_one;
@@ -81,7 +81,7 @@ $hamburger-delay: .1s;
 $hamburger-color: $themeColorTwo;
 
 $menu-close-size: 25px;
-$menu-close-color: $primary_color_two;
+$menu-close-color: $primary_color_one;
 $menuContainerMobilePaddingTop: 100px;
 
 // TITLES
@@ -104,7 +104,7 @@ $tableEvenFontColor: $primary_color_two;
 
 // TEXT
 $textMutedColor: lighten($primary_color_one, 65%);;
-
+$fontWeightTitles: 400;
 // Icons
 $iconColor: $themeColorTwo;
 $iconColorActive: lighten($themeColorTwo, 10%);

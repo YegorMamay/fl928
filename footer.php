@@ -12,8 +12,14 @@
     <div class="container">
         <div class="copyright">
             <div class="date"><?php _e('All rights reserved', 'brainworks'); ?> &copy; <?php echo date('Y'); ?></div>
+			<a class="copyright-link-page" href="https://fashionlab928.com/povernennya-i-obmin/">
+				Повернення і обмін
+			</a>
+			<a class="copyright-link-page" href="https://fashionlab928.com/oplata-i-dostavka/">
+				Оплата и доставка
+			</a>
             <div class="developer">
-                <?php _e('Developed by ', 'brainworks') ?><a href="https://brainworks.pro/" target="_blank">BRAIN WORKS</a> 
+                <?php _e('Developed by ', 'brainworks') ?><a href="https://brainworks.pro/" target="_blank">BRAIN WORKS</a>
             </div>
         </div>
     </div>

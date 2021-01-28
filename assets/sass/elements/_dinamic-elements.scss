@@ -31,84 +31,84 @@
 }
 
 //Other
-.phone-number[href^="tel:+"]::before,
-.phone-dropdown__link[href^="tel:+"]::before,
-.phone-number[href^="tel:0"]::before,
-.phone-dropdown__link[href^="tel:0"]::before,
-.phone-number[href^="tel:38"]::before,
-.phone-dropdown__link[href^="tel:38"]::before,
-.phone-dropdown__link[href^="tel:+38"]::before,
-.phone-number[href^="tel:+38"]::before {
-  content: '';
-  display: inline-block;
-  vertical-align: baseline;
-  width: 15px;
-  height: 15px;
-  margin-right: 3px;
-  margin-bottom: -1px;
-  background-image: image-url('phones.svg');
-  background-repeat: no-repeat;
-}
+// .phone-number[href^="tel:+"]::before,
+// .phone-dropdown__link[href^="tel:+"]::before,
+// .phone-number[href^="tel:0"]::before,
+// .phone-dropdown__link[href^="tel:0"]::before,
+// .phone-number[href^="tel:38"]::before,
+// .phone-dropdown__link[href^="tel:38"]::before,
+// .phone-dropdown__link[href^="tel:+38"]::before,
+// .phone-number[href^="tel:+38"]::before {
+//   content: '';
+//   display: inline-block;
+//   vertical-align: baseline;
+//   width: 15px;
+//   height: 15px;
+//   margin-right: 3px;
+//   margin-bottom: -1px;
+//   background-image: image-url('phones.svg');
+//   background-repeat: no-repeat;
+// }
 
 //Lifecell
-.phone-number[href^="tel:+38063"]::before,
-.phone-dropdown__link[href^="tel:+38063"]::before,
-.phone-number[href^="tel:+38073"]::before,
-.phone-dropdown__link[href^="tel:+38073"]::before,
-.phone-dropdown__link[href^="tel:+38093"]::before,
-.phone-number[href^="tel:+38093"]::before {
-  content: '';
-  display: inline-block;
-  vertical-align: baseline;
-  width: 15px;
-  height: 15px;
-  margin-right: 3px;
-  margin-bottom: -1px;
-  background-image: image-url('life.svg');
-  background-repeat: no-repeat;
-}
+// .phone-number[href^="tel:+38063"]::before,
+// .phone-dropdown__link[href^="tel:+38063"]::before,
+// .phone-number[href^="tel:+38073"]::before,
+// .phone-dropdown__link[href^="tel:+38073"]::before,
+// .phone-dropdown__link[href^="tel:+38093"]::before,
+// .phone-number[href^="tel:+38093"]::before {
+//   content: '';
+//   display: inline-block;
+//   vertical-align: baseline;
+//   width: 15px;
+//   height: 15px;
+//   margin-right: 3px;
+//   margin-bottom: -1px;
+//   background-image: image-url('life.svg');
+//   background-repeat: no-repeat;
+// }
 
 //Vodafone
-.phone-number[href^="tel:+38050"]::before,
-.phone-dropdown__link[href^="tel:+38050"]::before,
-.phone-number[href^="tel:+38066"]::before,
-.phone-dropdown__link[href^="tel:+38066"]::before,
-.phone-number[href^="tel:+38095"]::before,
-.phone-dropdown__link[href^="tel:+38095"]::before,
-.phone-number[href^="tel:+38099"]::before,
-.phone-dropdown__link[href^="tel:+38099"]::before {
-  content: '';
-  display: inline-block;
-  vertical-align: baseline;
-  width: 15px;
-  height: 15px;
-  margin-right: 3px;
-  margin-bottom: -1px;
-  background-image: image-url('vodafone.svg');
-  background-repeat: no-repeat;
-}
+// .phone-number[href^="tel:+38050"]::before,
+// .phone-dropdown__link[href^="tel:+38050"]::before,
+// .phone-number[href^="tel:+38066"]::before,
+// .phone-dropdown__link[href^="tel:+38066"]::before,
+// .phone-number[href^="tel:+38095"]::before,
+// .phone-dropdown__link[href^="tel:+38095"]::before,
+// .phone-number[href^="tel:+38099"]::before,
+// .phone-dropdown__link[href^="tel:+38099"]::before {
+//   content: '';
+//   display: inline-block;
+//   vertical-align: baseline;
+//   width: 15px;
+//   height: 15px;
+//   margin-right: 3px;
+//   margin-bottom: -1px;
+//   background-image: image-url('vodafone.svg');
+//   background-repeat: no-repeat;
+// }
 
 //kyivstar
-.phone-number[href^="tel:+38067"]::before,
-.phone-dropdown__link[href^="tel:+38067"]::before,
-.phone-number[href^="tel:+38068"]::before,
-.phone-dropdown__link[href^="tel:+38068"]::before,
-.phone-number[href^="tel:+38096"]::before,
-.phone-dropdown__link[href^="tel:+38096"]::before,
-.phone-number[href^="tel:+38097"]::before,
-.phone-dropdown__link[href^="tel:+38097"]::before,
-.phone-number[href^="tel:+38098"]::before,
-.phone-dropdown__link[href^="tel:+38098"]::before {
-  content: '';
-  display: inline-block;
-  vertical-align: baseline;
-  width: 15px;
-  height: 15px;
-  margin-right: 3px;
-  margin-bottom: -1px;
-  background-image: image-url('kyivstar.svg');
-  background-repeat: no-repeat;
-}
+// .phone-number[href^="tel:+38067"]::before,
+// .phone-dropdown__link[href^="tel:+38067"]::before,
+// .phone-number[href^="tel:+38068"]::before,
+// .phone-dropdown__link[href^="tel:+38068"]::before,
+// .phone-number[href^="tel:+38096"]::before,
+// .phone-dropdown__link[href^="tel:+38096"]::before,
+// .phone-number[href^="tel:+38097"]::before,
+// .phone-dropdown__link[href^="tel:+38097"]::before,
+// .phone-number[href^="tel:+38098"]::before,
+// .phone-dropdown__link[href^="tel:+38098"]::before {
+//   content: '';
+//   display: inline-block;
+//   vertical-align: baseline;
+//   width: 15px;
+//   height: 15px;
+//   margin-right: 3px;
+//   margin-bottom: -1px;
+//   background-image: image-url('kyivstar.svg');
+//   background-repeat: no-repeat;
+// }
 
 .phone-dropdown {
   @extend %reset-list;

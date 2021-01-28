@@ -285,7 +285,7 @@ if( is_admin() && ! class_exists('Term_Meta_Image') ){
 //Изменение перевода
 add_filter('gettext', 'translate_text');
 add_filter('ngettext', 'translate_text');
- 
+
 function translate_text($translated) {
 $translated = str_ireplace('Подытог', 'Итого', $translated);
 return $translated;
@@ -307,13 +307,13 @@ add_filter('wpseo_premium_post_redirect_slug_change', '__return_true' );
 add_action( 'woocommerce_after_add_to_cart_quantity', 'ts_quantity_plus_sign' );
 
 function ts_quantity_plus_sign() {
-    echo '<button type="button" class="plus" >+</button>';
+    echo '<button type="button" class="plus" >+</button></div>';
 }
 
 add_action( 'woocommerce_before_add_to_cart_quantity', 'ts_quantity_minus_sign' );
 
 function ts_quantity_minus_sign() {
-    echo '<button type="button" class="minus" >-</button>';
+    echo '<div class="qua-custom"><button type="button" class="minus" >-</button>';
 }
 
 add_action( 'wp_footer', 'ts_quantity_plus_minus' );

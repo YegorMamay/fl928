@@ -439,4 +439,13 @@ var _this = void 0;
     $(window).load(function() {
         $(document.body).trigger("wc_fragment_refresh");
     });
+
+	var cats = $('.categories__item a');
+ 	cats.first().addClass('active');
+
+	$('.categories__item a').hover(function() {
+    	$(this).addClass('active').next().fadeIn();
+    	$('.categories__item a').not(this).removeClass('active').next().fadeOut();
+    }
+)
 })(window, document, jQuery, window.jpAjax);

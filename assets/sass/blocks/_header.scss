@@ -4,12 +4,13 @@
     color: $headerFontColor;
     box-shadow: $shadow;
     //border-bottom: 1px solid $textMutedColor;
-    
+
     .left-top, .right-top {
         border-bottom: 1px solid $textMutedColor;
         padding-bottom: 20px;
+		align-items: flex-end;
     }
-    
+
     .fa-user {
         font-size: 30px;
     }
@@ -29,6 +30,9 @@
     &.is-solid {
 
     }
+	.text-muted {
+		font-size: 13px;
+	}
 
     &.is-fixed {
         position: fixed;

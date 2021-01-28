@@ -99,7 +99,8 @@ $headers-map: (
         #{$name} {
             font-size: round(map_get($value, fons-size-min));
             line-height: floor(round(map_get($value, fons-size-min)) * $title-line-height);
-            font-weight: 700;
+            font-weight: $fontWeightTitles;
+			text-transform: uppercase;
         }
     }
 

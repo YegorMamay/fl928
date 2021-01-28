@@ -11,16 +11,18 @@
 
     ::-webkit-scrollbar-thumb {
         background: $themeColorTwo;
+        background: #c0c0c0;
         border: 0 none #fff;
         border-radius: 0;
     }
 
     ::-webkit-scrollbar-thumb:hover {
         background: #fff;
+        background: #c0c0c0;
     }
 
     ::-webkit-scrollbar-thumb:active {
-        background: #aaa;
+        background: #c0c0c0;
     }
 
     ::-webkit-scrollbar-track {
@@ -30,11 +32,12 @@
     }
 
     ::-webkit-scrollbar-track:hover {
-        background: #111219;
+        background: #14151d;
     }
 
+    // ::-webkit-scrollbar-track:active {
     ::-webkit-scrollbar-track:active {
-        background: #333;
+        background: #14151d;
     }
 
     ::-webkit-scrollbar-corner {

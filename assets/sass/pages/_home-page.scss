@@ -1,0 +1,239 @@
+.categories {
+	padding: 3.7rem 0 5rem;
+	ul {
+		list-style: none;
+		padding-left: 0;
+	}
+	h2.categories__main-title {
+		font-size: 0.7rem;
+		font-family: $fontFamilyTwo;
+		margin-bottom: 30px;
+		color: #C1C0BF;
+		line-height: 1.3;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+	&__wrapp {
+		position: relative;
+	}
+	&__list {
+		margin-bottom: 50px;
+	}
+	&__item {
+		text-align: center;
+		&:first-child {
+			.categories__item-photo-wrapp {
+				display: block;
+			}
+		}
+	}
+	&__item-title {
+		transition: .3s ease;
+		font-weight: 400!important;
+		&:hover {
+			color: #E7D1C7;
+		}
+		&.active {
+			color: #E7D1C7;
+		}
+	}
+	&__item:nth-child(2n) {
+		.categories__item-photo:nth-child(2n+1) {
+			.categories__photo {
+				right: 0;
+				left: auto;
+				&:nth-child(2n) {
+					right: auto;
+					left: 0;
+				}
+			}
+		}
+	}
+	&__item-photo-wrapp {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		display: none;
+	}
+	&__item-photo {
+		position: relative;
+		width: 100%;
+	}
+	&__photo {
+		position: absolute;
+		left: 0;
+		right: auto;
+		width: 220px;
+		height: 370px;
+		img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+		&:first-child {
+			top: 0px;
+		}
+		&:last-child {
+			top: auto;
+			bottom: 0px;
+		}
+		&:nth-child(2n) {
+			right: 0;
+			left: auto;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+	button {
+		text-transform: uppercase;
+	}
+}
+
+.recommend {
+	padding-top: 4rem;
+	&__title-back {
+		font-size: calc(5em + 4vw);
+	}
+	&__wrapp {
+		text-align: center;
+	}
+	&__title-back {
+		width: 90%;
+		margin: 0 auto 50px;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	&__title-second {
+		font-size: 0.7rem;
+		font-family: $fontFamilyTwo;
+		color: #C1C0BF;
+		line-height: 1.3;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		margin-bottom: 5px;
+	}
+	&__title {
+		font-size: 3rem;
+    	letter-spacing: 0.04em;
+		margin-bottom: 1rem;
+	}
+	.woocommerce .ywcps-wrapper .owl-item li.product {
+		padding: 0 0 20px;
+		box-shadow: none;
+		border: none;
+		.price {
+			font-family: $fontFamilyTwo;
+		}
+		.woocommerce-Price-currencySymbol {
+			font-size: 14px;
+		}
+		.woocommerce-loop-product__title {
+			font-size: 24px;
+			line-height: 1.3;
+			font-weight: 600;
+			text-transform: none;
+			font-family: $fontFamilyOne;
+		}
+	}
+	.woocommerce .ywcps-wrapper .ywcps-nav-next {
+		opacity: 1;
+		#default_next {
+			background: url(assets/img/arrow-right@2x.png) no-repeat 50% 50% /cover;
+			right: -50px;
+			width: 50px;
+			height: 50px;
+			border: none;
+			display: block;
+			top: 35%;
+			transform: translate(0, -50%);
+		}
+	}
+	.woocommerce .ywcps-wrapper .ywcps-nav-prev  {
+		opacity: 1;
+		#default_prev {
+			background: url(assets/img/arrow-left.png) no-repeat 50% 50% /cover;
+			left: -60px;
+			width: 50px;
+			height: 50px;
+			border: none;
+			display: block;
+			top: 35%;
+			transform: translate(0, -50%);
+		}
+	}
+	.ywcps-wrapper:hover {
+		.ywcps-nav-prev {
+			left: -50px;
+		}
+		.ywcps-nav-next {
+			right: -50px;
+		}
+	}
+
+}
+
+@media only screen and (max-width: 1400px) {
+	.recommend {
+		.woocommerce .ywcps-wrapper .ywcps-nav-next #default_next {
+			right: 0px;
+			width: 40px;
+			height: 40px;
+		}
+		.woocommerce .ywcps-wrapper .ywcps-nav-prev #default_prev {
+			left: 0px;
+			width: 40px;
+			height: 40px;
+		}
+		.ywcps-wrapper {
+			.ywcps-nav-prev {
+				left: 0px;
+			}
+			.ywcps-nav-next {
+				right: 0px;
+			}
+		}
+		.ywcps-wrapper:hover {
+			.ywcps-nav-prev {
+				left: 0px;
+			}
+			.ywcps-nav-next {
+				right: 0px;
+			}
+		}
+	}
+}
+
+
+
+@media only screen and (max-width: 950px) {
+	.categories {
+		padding: 1.8rem 0 4rem;
+		// &__item-photo {
+		// 	display: none!important;
+		// }
+		h2.categories__main-title  {
+			margin-bottom: 20px;
+		}
+		&__list {
+			margin-bottom: 30px;
+		}
+		&__photo {
+			width: 175px;
+			height: 270px;
+		}
+	}
+}
+
+@media #{$tablet-max}{
+	.categories {
+		&__item-photo {
+			display: none!important;
+		}
+	}
+
+}

@@ -11,7 +11,7 @@
    <link data-minify="0" rel="preload" href="/wp-content/plugins/LayerSlider/assets/static/layerslider/skins/fullwidth/skin.css" as="style">
    */
     ?>
-       
+
     <title>
         <?php
         if (is_front_page()) {
@@ -102,7 +102,7 @@
                         <?php echo do_shortcode('[bw-phone]'); ?>
                         <?php echo do_shortcode('[bw-social]'); ?>
                     </div>
-                   
+
                    <?php if (has_nav_menu('main-nav')) { ?>
                 <nav class="nav js-menu">
                     <button type="button" tabindex="0"
@@ -141,10 +141,17 @@
                         <?php echo esc_html($address); ?>
                     </span>
                     <?php } ?>
-                    
-                    <a href="/my-account/"><i class="fal fa-user"></i></a>
-                   
+
+
+
                     <div class="nav-wrapper">
+						<a class="d-flex nav-wrapper-profile" href="/my-account/">
+							<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M20.3176 21.2547C20.3176 15.3682 16.6206 13.094 10.6588 13.094C4.69706 13.094 1 15.3682 1 21.2547" stroke="#0F0F0F" stroke-width="1.5" stroke-miterlimit="10"/>
+								<path d="M6.98633 5.44784C6.98633 3.28055 8.78223 1.50732 10.9772 1.50732C13.1722 1.50732 14.8684 3.28055 14.9681 5.44784C14.9681 7.61512 13.1722 9.38835 10.9772 9.38835C8.78223 9.38835 6.98633 7.61512 6.98633 5.44784Z" stroke="#0F0F0F" stroke-width="1.5" stroke-miterlimit="10"/>
+							</svg>
+							<!-- <i class="fal fa-user"></i> -->
+						</a>
                         <div class="woo-cart woo-cart-popup-wrapper">
                             <?php if ( class_exists( 'WooCommerce' ) ) { ?>
                                 <?php echo woocommerce_cart(); ?>
@@ -170,7 +177,7 @@
                 </div>
             </div>
 
-            
+
         </div>
     </header>
 
@@ -187,13 +194,13 @@
             ])
             ?>
         </div>
-        
+
         <div class="woo-cart">
            <?php if ( class_exists( 'WooCommerce' ) ) woocommerce_cart() ?><?php echo woocommerce_get_total_price(); ?>
         </div>
-        
-        
-        
+
+
+
         <button class="hamburger js-hamburger" type="button" tabindex="0">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -212,6 +219,16 @@
                 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                 'depth' => 3
             )); ?>
+			<?php wp_nav_menu(array(
+				'theme_location' => 'second-menu',
+				'container' => false,
+				'menu_class' => 'menu-container',
+				'menu_id' => '',
+				'fallback_cb' => 'wp_page_menu',
+				'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				'depth' => 2
+			)); ?>
+
             <?php if (has_nav_menu('language-switcher')) { ?>
                 <div class="mobile-language">
                     <?php wp_nav_menu(array(
@@ -230,7 +247,7 @@
             </div>
             <div class="vh-xs-2"></div>
             <div class="social-mob"><?php echo do_shortcode('[bw-social]'); ?></div>
-            
+
         </nav>
     <?php } ?>
     <!-- Mobile menu end-->
